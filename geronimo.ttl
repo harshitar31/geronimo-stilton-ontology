@@ -14,6 +14,49 @@
 #    Object Properties
 #################################################################
 
+###  http://example.org/stilton#hasAunt
+:hasAunt rdf:type owl:ObjectProperty ;
+         rdfs:domain :Character ,
+                     schema:Person ;
+         rdfs:range :Character ,
+                    schema:Person .
+
+
+###  http://example.org/stilton#hasCousin
+:hasCousin rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:SymmetricProperty ;
+           rdfs:domain :Character ,
+                       schema:Person ;
+           rdfs:range :Character ,
+                      schema:Person .
+
+
+###  http://example.org/stilton#hasGrandParent
+:hasGrandParent rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Character ,
+                            schema:Person ;
+                rdfs:range :Character ,
+                           schema:Person .
+
+
+###  http://example.org/stilton#hasNephew
+:hasNephew rdf:type owl:ObjectProperty ;
+           rdfs:domain :Character ,
+                       schema:Person ;
+           rdfs:range :Character ,
+                      schema:Person .
+
+
+###  http://example.org/stilton#hasNiece
+:hasNiece rdf:type owl:ObjectProperty ;
+          rdfs:domain :Character ,
+                      schema:Person ;
+          rdfs:range :Character ,
+                     schema:Person .
+
+
 ###  http://example.org/stilton#hasSibling
 :hasSibling rdf:type owl:ObjectProperty ,
                      owl:SymmetricProperty ,
@@ -22,6 +65,33 @@
                         schema:Person ;
             rdfs:range :Character ,
                        schema:Person .
+
+
+###  http://example.org/stilton#hasUncle
+:hasUncle rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Character ,
+                      schema:Person ;
+          rdfs:range :Character ,
+                     schema:Person .
+
+
+###  https://schema.org/homeLocation
+schema:homeLocation rdf:type owl:ObjectProperty ;
+                    rdfs:range schema:Place .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:DatatypeProperty .
+
+
+###  https://schema.org/jobTitle
+schema:jobTitle rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:string .
 
 
 #################################################################
@@ -37,6 +107,10 @@
 schema:Person rdf:type owl:Class .
 
 
+###  https://schema.org/Place
+schema:Place rdf:type owl:Class .
+
+
 #################################################################
 #    Individuals
 #################################################################
@@ -44,26 +118,73 @@ schema:Person rdf:type owl:Class .
 ###  http://example.org/stilton#benjaminStilton
 :benjaminStilton rdf:type owl:NamedIndividual ,
                           :Character ;
+                 :hasAunt :geronimoStilton ;
+                 :hasUncle :geronimoStilton ;
+                 schema:homeLocation :newMouseCity ;
+                 schema:jobTitle "Student" ;
                  rdfs:label "Benjamin Stilton"@en .
 
 
 ###  http://example.org/stilton#geronimoStilton
 :geronimoStilton rdf:type owl:NamedIndividual ,
                           :Character ;
+                 :hasAunt :sweetfur ;
+                 :hasCousin :trapStilton ;
+                 :hasGrandParent :williamShortpaws ;
+                 :hasNephew :benjaminStilton ;
                  :hasSibling :theaStilton ;
+                 schema:homeLocation :newMouseCity ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "Gerry Berry" ;
+                 schema:jobTitle "Journalist" ;
                  rdfs:label "Geronimo Stilton"@en .
+
+
+###  http://example.org/stilton#newMouseCity
+:newMouseCity rdf:type owl:NamedIndividual ,
+                       schema:Place ;
+              rdfs:label "New Mouse City" .
+
+
+###  http://example.org/stilton#sweetfur
+:sweetfur rdf:type owl:NamedIndividual ,
+                   :Character ;
+          :hasNephew :geronimoStilton ,
+                     :trapStilton ;
+          :hasNiece :theaStilton ;
+          rdfs:label "Sweetfur"@en .
 
 
 ###  http://example.org/stilton#theaStilton
 :theaStilton rdf:type owl:NamedIndividual ,
                       :Character ;
+             :hasAunt :sweetfur ;
+             :hasCousin :trapStilton ;
+             :hasGrandParent :williamShortpaws ;
+             :hasNephew :benjaminStilton ;
+             :hasSibling :geronimoStilton ;
+             schema:homeLocation :newMouseCity ;
+             schema:jobTitle "Journalist" ,
+                             "Nature Photographer" ;
              rdfs:label "Thea Stilton"@en .
 
 
 ###  http://example.org/stilton#trapStilton
 :trapStilton rdf:type owl:NamedIndividual ,
                       :Character ;
+             :hasAunt :sweetfur ;
+             :hasCousin :geronimoStilton ,
+                        :theaStilton ;
+             :hasGrandParent :williamShortpaws ;
+             schema:homeLocation :newMouseCity ;
+             schema:jobTitle "Shop owner" ;
              rdfs:label "Trap Stilton"@en .
+
+
+###  http://example.org/stilton#williamShortpaws
+:williamShortpaws rdf:type owl:NamedIndividual ,
+                           :Character ;
+                  schema:homeLocation :newMouseCity ;
+                  rdfs:label "William Shortpaws"@en .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
