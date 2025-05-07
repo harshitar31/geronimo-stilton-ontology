@@ -118,7 +118,7 @@ schema:Place rdf:type owl:Class .
 ###  http://example.org/stilton#benjaminStilton
 :benjaminStilton rdf:type owl:NamedIndividual ,
                           :Character ;
-                 :hasAunt :geronimoStilton ;
+                 :hasAunt :theaStilton ;
                  :hasUncle :geronimoStilton ;
                  schema:homeLocation :newMouseCity ;
                  schema:jobTitle "Student" ;
