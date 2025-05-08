@@ -32,6 +32,15 @@
                       schema:Person .
 
 
+###  http://example.org/stilton#hasFriend
+:hasFriend rdf:type owl:ObjectProperty ,
+                    owl:SymmetricProperty ;
+           rdfs:domain :Character ,
+                       schema:Person ;
+           rdfs:range :Character ,
+                      schema:Person .
+
+
 ###  http://example.org/stilton#hasGrandParent
 :hasGrandParent rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
@@ -76,9 +85,23 @@
                      schema:Person .
 
 
+###  https://schema.org/employee
+schema:employee rdf:type owl:ObjectProperty ;
+                rdfs:domain schema:Organization ;
+                rdfs:range :Character ,
+                           schema:Person .
+
+
 ###  https://schema.org/homeLocation
 schema:homeLocation rdf:type owl:ObjectProperty ;
                     rdfs:range schema:Place .
+
+
+###  https://schema.org/worksFor
+schema:worksFor rdf:type owl:ObjectProperty ;
+                rdfs:domain :Character ,
+                            schema:Person ;
+                rdfs:range schema:Organization .
 
 
 #################################################################
@@ -103,6 +126,10 @@ schema:jobTitle rdf:type owl:DatatypeProperty ;
            owl:equivalentClass schema:Person .
 
 
+###  https://schema.org/Organization
+schema:Organization rdf:type owl:Class .
+
+
 ###  https://schema.org/Person
 schema:Person rdf:type owl:Class .
 
@@ -114,6 +141,32 @@ schema:Place rdf:type owl:Class .
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://example.org/stilton#HerculePoirat
+:HerculePoirat rdf:type owl:NamedIndividual ,
+                        :Character ;
+               rdfs:label "Hercule Poirat"@en .
+
+
+###  http://example.org/stilton#PetuniaPrettyPaws
+:PetuniaPrettyPaws rdf:type owl:NamedIndividual ,
+                            :Character ;
+                   rdfs:label "Petunia Pretty Paws"@en .
+
+
+###  http://example.org/stilton#ProfessorPawsVonVolt
+:ProfessorPawsVonVolt rdf:type owl:NamedIndividual ,
+                               :Character ;
+                      rdfs:label "Professor Paws von Volt"@en .
+
+
+###  http://example.org/stilton#RodentsGazette
+:RodentsGazette rdf:type owl:NamedIndividual ,
+                         schema:Organization ;
+                schema:employee :geronimoStilton ,
+                                :theaStilton ;
+                rdfs:label "The Rodents Gazette"@en .
+
 
 ###  http://example.org/stilton#benjaminStilton
 :benjaminStilton rdf:type owl:NamedIndividual ,
@@ -130,10 +183,14 @@ schema:Place rdf:type owl:Class .
                           :Character ;
                  :hasAunt :sweetfur ;
                  :hasCousin :trapStilton ;
+                 :hasFriend :HerculePoirat ,
+                            :PetuniaPrettyPaws ,
+                            :ProfessorPawsVonVolt ;
                  :hasGrandParent :williamShortpaws ;
                  :hasNephew :benjaminStilton ;
                  :hasSibling :theaStilton ;
                  schema:homeLocation :newMouseCity ;
+                 schema:worksFor :RodentsGazette ;
                  <http://www.w3.org/2004/02/skos/core#altLabel> "Gerry Berry" ;
                  schema:jobTitle "Journalist" ;
                  rdfs:label "Geronimo Stilton"@en .
@@ -163,6 +220,7 @@ schema:Place rdf:type owl:Class .
              :hasNephew :benjaminStilton ;
              :hasSibling :geronimoStilton ;
              schema:homeLocation :newMouseCity ;
+             schema:worksFor :RodentsGazette ;
              schema:jobTitle "Journalist" ,
                              "Nature Photographer" ;
              rdfs:label "Thea Stilton"@en .
