@@ -165,6 +165,12 @@ schema:Place rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://example.org/stilton#Beartina
+:Beartina rdf:type owl:NamedIndividual ,
+                   :Character ;
+          rdfs:label "Beartina"@en .
+
+
 ###  http://example.org/stilton#Blossom
 :Blossom rdf:type owl:NamedIndividual ,
                   :Character ;
@@ -198,6 +204,7 @@ schema:Place rdf:type owl:Class .
 ###  http://example.org/stilton#HerculePoirat
 :HerculePoirat rdf:type owl:NamedIndividual ,
                         :Character ;
+               rdfs:comment "Hercule Poirat is a private detective and a friend of Geronimo Stilton. His name is a pun on the famous detective Hercule Poirot."@en ;
                rdfs:label "Hercule Poirat"@en .
 
 
@@ -213,15 +220,23 @@ schema:Place rdf:type owl:Class .
      rdfs:label "Mel the Magnificent"@en .
 
 
+###  http://example.org/stilton#Owlivia
+:Owlivia rdf:type owl:NamedIndividual ,
+                  :Character ;
+         rdfs:label "Owlivia"@en .
+
+
 ###  http://example.org/stilton#PetuniaPrettyPaws
 :PetuniaPrettyPaws rdf:type owl:NamedIndividual ,
                             :Character ;
+                   rdfs:comment "Petunia Pretty Paws is a friend of Geronimo Stilton. She is known for her charm, intelligence, and investigative skills."@en ;
                    rdfs:label "Petunia Pretty Paws"@en .
 
 
 ###  http://example.org/stilton#ProfessorPawsVonVolt
 :ProfessorPawsVonVolt rdf:type owl:NamedIndividual ,
                                :Character ;
+                      rdfs:comment "Professor Paws von Volt is a scientist and inventor. He is a friend of Geronimo and often helps with technological gadgets and discoveries."@en ;
                       rdfs:label "Professor Paws von Volt"@en .
 
 
@@ -231,6 +246,18 @@ schema:Place rdf:type owl:Class .
                 schema:employee :geronimoStilton ,
                                 :theaStilton ;
                 rdfs:label "The Rodents Gazette"@en .
+
+
+###  http://example.org/stilton#Roxy_Foxy
+:Roxy_Foxy rdf:type owl:NamedIndividual ,
+                    :Character ;
+           rdfs:label "Roxy Foxy"@en .
+
+
+###  http://example.org/stilton#Scribblehopper
+:Scribblehopper rdf:type owl:NamedIndividual ,
+                         :Character ;
+                rdfs:label "Scribblehopper"@en .
 
 
 ###  http://example.org/stilton#The_Kingdom_of_Fantasy
@@ -245,6 +272,12 @@ schema:Place rdf:type owl:Class .
         rdfs:label "Wither"@en .
 
 
+###  http://example.org/stilton#Wolfy
+:Wolfy rdf:type owl:NamedIndividual ,
+                :Character ;
+       rdfs:label "Wolfy"@en .
+
+
 ###  http://example.org/stilton#benjaminStilton
 :benjaminStilton rdf:type owl:NamedIndividual ,
                           :Character ;
@@ -252,6 +285,7 @@ schema:Place rdf:type owl:Class .
                  :hasUncle :geronimoStilton ;
                  schema:homeLocation :newMouseCity ;
                  schema:jobTitle "Student" ;
+                 rdfs:comment "Benjamin Stilton is Geronimo's young nephew and often accompanies him on his adventures. He is a student and very intelligent for his age."@en ;
                  rdfs:label "Benjamin Stilton"@en .
 
 
@@ -270,6 +304,7 @@ schema:Place rdf:type owl:Class .
                  schema:worksFor :RodentsGazette ;
                  <http://www.w3.org/2004/02/skos/core#altLabel> "Gerry Berry" ;
                  schema:jobTitle "Journalist" ;
+                 rdfs:comment "Geronimo Stilton is the protagonist of the series. He is a journalist and editor for The Rodent's Gazette, and often finds himself in adventurous situations."@en ;
                  rdfs:label "Geronimo Stilton"@en .
 
 
@@ -285,6 +320,7 @@ schema:Place rdf:type owl:Class .
           :hasNephew :geronimoStilton ,
                      :trapStilton ;
           :hasNiece :theaStilton ;
+          rdfs:comment "Sweetfur is the aunt of Geronimo, Thea, and Trap Stilton. She is a nurturing and supportive elder figure in the Stilton family."@en ;
           rdfs:label "Sweetfur"@en .
 
 
@@ -300,6 +336,7 @@ schema:Place rdf:type owl:Class .
              schema:worksFor :RodentsGazette ;
              schema:jobTitle "Journalist" ,
                              "Nature Photographer" ;
+             rdfs:comment "Thea Stilton is Geronimo's sister. She is a journalist and a nature photographer known for her bravery and curiosity."@en ;
              rdfs:label "Thea Stilton"@en .
 
 
@@ -312,6 +349,7 @@ schema:Place rdf:type owl:Class .
              :hasGrandParent :williamShortpaws ;
              schema:homeLocation :newMouseCity ;
              schema:jobTitle "Shop owner" ;
+             rdfs:comment "Trap Stilton is Geronimo's cousin. He runs a shop and is known for his mischievous personality and love for pranks."@en ;
              rdfs:label "Trap Stilton"@en .
 
 
@@ -319,6 +357,7 @@ schema:Place rdf:type owl:Class .
 :williamShortpaws rdf:type owl:NamedIndividual ,
                            :Character ;
                   schema:homeLocation :newMouseCity ;
+                  rdfs:comment "William Shortpaws is the grandfather of the Stilton siblings. He is a respected elder and a key figure in the family lineage."@en ;
                   rdfs:label "William Shortpaws"@en .
 
 
