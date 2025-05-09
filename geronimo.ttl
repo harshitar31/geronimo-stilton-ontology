@@ -19,7 +19,8 @@
          rdfs:domain :Character ,
                      schema:Person ;
          rdfs:range :Character ,
-                    schema:Person .
+                    schema:Person ;
+         rdfs:comment "Relates a character to their aunt, who is the sister of one of the character's parents."@en .
 
 
 ###  http://example.org/stilton#hasCousin
@@ -29,7 +30,8 @@
            rdfs:domain :Character ,
                        schema:Person ;
            rdfs:range :Character ,
-                      schema:Person .
+                      schema:Person ;
+           rdfs:comment "Represents a reciprocal family relationship between characters who are children of siblings (i.e., first cousins). This property is symmetric, meaning if Character A is a cousin of Character B, then Character B is also a cousin of Character A."@en .
 
 
 ###  http://example.org/stilton#hasFriend
@@ -38,7 +40,8 @@
            rdfs:domain :Character ,
                        schema:Person ;
            rdfs:range :Character ,
-                      schema:Person .
+                      schema:Person ;
+           rdfs:comment "Denotes a bidirectional friendship between two characters."@en .
 
 
 ###  http://example.org/stilton#hasGrandParent
@@ -47,7 +50,8 @@
                 rdfs:domain :Character ,
                             schema:Person ;
                 rdfs:range :Character ,
-                           schema:Person .
+                           schema:Person ;
+                rdfs:comment "Relates a character to their grandparent, who is the parent of one of their parents."@en .
 
 
 ###  http://example.org/stilton#hasNephew
@@ -55,7 +59,8 @@
            rdfs:domain :Character ,
                        schema:Person ;
            rdfs:range :Character ,
-                      schema:Person .
+                      schema:Person ;
+           rdfs:comment "Relates a character to a nephew, defined as the son of their sibling."@en .
 
 
 ###  http://example.org/stilton#hasNiece
@@ -63,7 +68,8 @@
           rdfs:domain :Character ,
                       schema:Person ;
           rdfs:range :Character ,
-                     schema:Person .
+                     schema:Person ;
+          rdfs:comment "Relates a character to a niece, defined as the daughter of their sibling."@en .
 
 
 ###  http://example.org/stilton#hasSibling
@@ -73,7 +79,8 @@
             rdfs:domain :Character ,
                         schema:Person ;
             rdfs:range :Character ,
-                       schema:Person .
+                       schema:Person ;
+            rdfs:comment "Denotes a sibling relationship between characters who share the same parents. This property is both symmetric and transitive."@en .
 
 
 ###  http://example.org/stilton#hasUncle
@@ -82,7 +89,16 @@
           rdfs:domain :Character ,
                       schema:Person ;
           rdfs:range :Character ,
-                     schema:Person .
+                     schema:Person ;
+          rdfs:comment "Relates a character to their uncle, who is the brother of one of the character’s parents."@en .
+
+
+###  http://example.org/stilton#memberOfGroup
+:memberOfGroup rdf:type owl:ObjectProperty ;
+               rdfs:domain :Character ,
+                           schema:Person ;
+               rdfs:range :Group ;
+               rdfs:comment "Relates a character to a group they belong to, such as a family unit, team, or organization."@en .
 
 
 ###  https://schema.org/employee
@@ -123,7 +139,14 @@ schema:jobTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/stilton#Character
 :Character rdf:type owl:Class ;
-           owl:equivalentClass schema:Person .
+           owl:equivalentClass schema:Person ;
+           rdfs:comment "A fictional character from the Geronimo Stilton universe. Characters may have relationships such as family ties or friendships."@en .
+
+
+###  http://example.org/stilton#Group
+:Group rdf:type owl:Class ;
+       rdfs:comment "A collection of characters who are part of an organized team, band, or family unit."@en ;
+       rdfs:label "Group"@en .
 
 
 ###  https://schema.org/Organization
@@ -142,10 +165,52 @@ schema:Place rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://example.org/stilton#Blossom
+:Blossom rdf:type owl:NamedIndividual ,
+                  :Character ;
+         rdfs:label "Blossom"@en .
+
+
+###  http://example.org/stilton#Cackle
+:Cackle rdf:type owl:NamedIndividual ,
+                 :Character ;
+        rdfs:label "Cackle"@en .
+
+
+###  http://example.org/stilton#Clever
+:Clever rdf:type owl:NamedIndividual ,
+                 :Character ;
+        rdfs:label "Clever"@en .
+
+
+###  http://example.org/stilton#Crowbar
+:Crowbar rdf:type owl:NamedIndividual ,
+                  :Character ;
+         rdfs:label "Crowbar"@en .
+
+
+###  http://example.org/stilton#George
+:George rdf:type owl:NamedIndividual ,
+                 :Character ;
+        rdfs:label "George"@en .
+
+
 ###  http://example.org/stilton#HerculePoirat
 :HerculePoirat rdf:type owl:NamedIndividual ,
                         :Character ;
                rdfs:label "Hercule Poirat"@en .
+
+
+###  http://example.org/stilton#Lady_of_Dreams
+:Lady_of_Dreams rdf:type owl:NamedIndividual ,
+                         :Character ;
+                rdfs:label "Lady of Dreams"@en .
+
+
+###  http://example.org/stilton#Mel
+:Mel rdf:type owl:NamedIndividual ,
+              :Character ;
+     rdfs:label "Mel the Magnificent"@en .
 
 
 ###  http://example.org/stilton#PetuniaPrettyPaws
@@ -166,6 +231,18 @@ schema:Place rdf:type owl:Class .
                 schema:employee :geronimoStilton ,
                                 :theaStilton ;
                 rdfs:label "The Rodents Gazette"@en .
+
+
+###  http://example.org/stilton#The_Kingdom_of_Fantasy
+:The_Kingdom_of_Fantasy rdf:type owl:NamedIndividual ,
+                                 schema:Place ;
+                        rdfs:label "The Kingdom of Fantasy"@en .
+
+
+###  http://example.org/stilton#Wither
+:Wither rdf:type owl:NamedIndividual ,
+                 :Character ;
+        rdfs:label "Wither"@en .
 
 
 ###  http://example.org/stilton#benjaminStilton
