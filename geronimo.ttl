@@ -54,6 +54,16 @@
                 rdfs:comment "Relates a character to their grandparent, who is the parent of one of their parents."@en .
 
 
+###  http://example.org/stilton#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :memberOfGroup ;
+           rdfs:domain :Group ;
+           rdfs:range :Character ,
+                      schema:Person ;
+           rdfs:comment "Indicates that a group contains the given character as a member."@en .
+
+
 ###  http://example.org/stilton#hasNephew
 :hasNephew rdf:type owl:ObjectProperty ;
            rdfs:domain :Character ,
@@ -143,6 +153,12 @@ schema:jobTitle rdf:type owl:DatatypeProperty ;
            rdfs:comment "A fictional character from the Geronimo Stilton universe. Characters may have relationships such as family ties or friendships."@en .
 
 
+###  http://example.org/stilton#Dragon
+:Dragon rdf:type owl:Class ;
+        rdfs:comment "A class representing dragon characters in the Geronimo Stilton universe, typically mythical or magical in nature."@en ;
+        rdfs:label "Dragon"@en .
+
+
 ###  http://example.org/stilton#Group
 :Group rdf:type owl:Class ;
        rdfs:comment "A collection of characters who are part of an organized team, band, or family unit."@en ;
@@ -174,6 +190,7 @@ schema:Place rdf:type owl:Class .
 ###  http://example.org/stilton#Blossom
 :Blossom rdf:type owl:NamedIndividual ,
                   :Character ;
+         :memberOfGroup :The_Secret_Alliance ;
          rdfs:label "Blossom"@en .
 
 
@@ -186,6 +203,7 @@ schema:Place rdf:type owl:Class .
 ###  http://example.org/stilton#Clever
 :Clever rdf:type owl:NamedIndividual ,
                  :Character ;
+        :memberOfGroup :The_Secret_Alliance ;
         rdfs:label "Clever"@en .
 
 
@@ -211,12 +229,21 @@ schema:Place rdf:type owl:Class .
 ###  http://example.org/stilton#Lady_of_Dreams
 :Lady_of_Dreams rdf:type owl:NamedIndividual ,
                          :Character ;
+                :memberOfGroup :The_Secret_Alliance ;
                 rdfs:label "Lady of Dreams"@en .
+
+
+###  http://example.org/stilton#LightBright
+:LightBright rdf:type owl:NamedIndividual ,
+                      :Dragon ;
+             rdfs:label "LightBright"@en ,
+                        "The Dragon of Fortune"@en .
 
 
 ###  http://example.org/stilton#Mel
 :Mel rdf:type owl:NamedIndividual ,
               :Character ;
+     :memberOfGroup :The_Secret_Alliance ;
      rdfs:label "Mel the Magnificent"@en .
 
 
@@ -264,6 +291,16 @@ schema:Place rdf:type owl:Class .
 :The_Kingdom_of_Fantasy rdf:type owl:NamedIndividual ,
                                  schema:Place ;
                         rdfs:label "The Kingdom of Fantasy"@en .
+
+
+###  http://example.org/stilton#The_Secret_Alliance
+:The_Secret_Alliance rdf:type owl:NamedIndividual ,
+                              :Group ;
+                     :hasMember :Blossom ,
+                                :Clever ,
+                                :Lady_of_Dreams ,
+                                :Mel ;
+                     rdfs:label "The Secret Alliance"@en .
 
 
 ###  http://example.org/stilton#Wither
