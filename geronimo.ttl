@@ -191,6 +191,7 @@ schema:Place rdf:type owl:Class .
 :Blossom rdf:type owl:NamedIndividual ,
                   :Character ;
          :memberOfGroup :The_Secret_Alliance ;
+         rdfs:comment "Queen Blossom is the benevolent ruler of the Kingdom of Fairies. She rules alongside her husband George and daughter Princess Winglet. Blossom is known for her sense of justice and kindness toward all creatures of the Kingdom of Fantasy."@en ;
          rdfs:label "Blossom"@en .
 
 
@@ -204,6 +205,7 @@ schema:Place rdf:type owl:Class .
 :Clever rdf:type owl:NamedIndividual ,
                  :Character ;
         :memberOfGroup :The_Secret_Alliance ;
+        rdfs:comment "Clever Chameleon is the wisest member of the Lizard Population and serves as a spiritual guide and martial arts expert who only uses his abilities to protect the innocent."@en ;
         rdfs:label "Clever"@en .
 
 
@@ -230,6 +232,7 @@ schema:Place rdf:type owl:Class .
 :Lady_of_Dreams rdf:type owl:NamedIndividual ,
                          :Character ;
                 :memberOfGroup :The_Secret_Alliance ;
+                rdfs:comment "The Lady of Dreams is a powerful and benevolent figure who lives and rules over the Mountain of Sweet Dreams, located in the Kingdom of Fairies."@en ;
                 rdfs:label "Lady of Dreams"@en .
 
 
@@ -244,6 +247,7 @@ schema:Place rdf:type owl:Class .
 :Mel rdf:type owl:NamedIndividual ,
               :Character ;
      :memberOfGroup :The_Secret_Alliance ;
+     rdfs:comment "Mel, commonly known as the Great Wizard of Light, is a wise and kind figure in the Kingdom of Fantasy."@en ;
      rdfs:label "Mel the Magnificent"@en .
 
 
