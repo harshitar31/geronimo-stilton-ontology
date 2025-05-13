@@ -239,6 +239,7 @@ schema:Place rdf:type owl:Class .
 ###  http://example.org/stilton#LightBright
 :LightBright rdf:type owl:NamedIndividual ,
                       :Dragon ;
+             rdfs:comment "Lightbright, also nicknamed \"The Dragon of Fortune\", is Mel's loyal assistant and advisor. It is said that Lightbright has scales made of pure starlight and has immense strength. It is also said that his breath weapon is consisted of pure magic light energy , which could be a powerful ray of fire. He can only be seen at night. The dragon vanishes at the first rays of the sun, because he feeds off starlight and needs it to survive. Every night he returns again."@en ;
              rdfs:label "LightBright"@en ,
                         "The Dragon of Fortune"@en .
 
