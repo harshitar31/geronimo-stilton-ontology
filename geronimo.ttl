@@ -311,6 +311,7 @@ schema:Place rdf:type owl:Class .
 ###  http://example.org/stilton#Wither
 :Wither rdf:type owl:NamedIndividual ,
                  :Character ;
+        rdfs:comment "Queen Wither is the current leader of the Kingdom of Witches and the queen of the Dark Fairies. She's the twin sister of Blossom of the Light Fairies. It said that a Scarlet Skull Butterfly sent by Cackle stung Wither and she became evil from the dark butterfly's venom's influence."@en ;
         rdfs:label "Wither"@en .
 
 
