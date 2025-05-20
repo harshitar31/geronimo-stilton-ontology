@@ -212,6 +212,7 @@ schema:Place rdf:type owl:Class .
 ###  http://example.org/stilton#Crowbar
 :Crowbar rdf:type owl:NamedIndividual ,
                   :Character ;
+         rdfs:comment "Crowbar is a Dark Wizard who has the ability to transform into a Crow at his own will. He is Wither's husband and Flamelet's father."@en ;
          rdfs:label "Crowbar"@en .
 
 
