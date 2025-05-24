@@ -198,6 +198,7 @@ schema:Place rdf:type owl:Class .
 ###  http://example.org/stilton#Cackle
 :Cackle rdf:type owl:NamedIndividual ,
                  :Character ;
+        rdfs:comment "Queen Cackle is the former Queen of the Witches before Wither replaced her in The Dragon of Fortune. It was said that she loathes all things that are happy, but in every story, the Knight Geronimo Stilton successfully foils her schemes."@en ;
         rdfs:label "Cackle"@en .
 
 
