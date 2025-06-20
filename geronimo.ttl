@@ -217,6 +217,13 @@ schema:Place rdf:type owl:Class .
          rdfs:label "Crowbar"@en .
 
 
+###  http://example.org/stilton#Dragon_of_the_Rainbow
+:Dragon_of_the_Rainbow rdf:type owl:NamedIndividual ,
+                                :Dragon ;
+                       rdfs:comment "Dragon of the Rainbow is a huge golden coloured dragon. He is Geronimo's constant sidekick and is the faithful messenger of Blossom, Queen of the Fairies. He lives in Kingdom of the Fairies"@en ;
+                       rdfs:label "Dragon of the Rainbow"@en .
+
+
 ###  http://example.org/stilton#George
 :George rdf:type owl:NamedIndividual ,
                  :Character ;
